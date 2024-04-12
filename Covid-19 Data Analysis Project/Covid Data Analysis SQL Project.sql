@@ -74,7 +74,7 @@ ORDER BY 1,2;
 
 SELECT dea.continent,dea.location,dea.date,dea.population,vac.new_vaccinations,
 SUM(CONVERT(INT,vac.new_vaccinations)) OVER (PARTITION BY dea.location ORDER BY dea.location,
-dea.date) AS RollingPeopleVaccinated,
+dea.date) AS RollingPeopleVaccinated
 --(RollingPeopleVaccinated/population)*100
 FROM PortfolioProject..CovidDeaths dea
 JOIN PortfolioProject..CovidVaccinations vac
